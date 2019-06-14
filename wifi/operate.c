@@ -515,10 +515,12 @@ int connect_network2(char * iface, char * ssid, char * pw, int isAscii, int secu
 	//save_config
 	if (wpa_cli_cmd2(iface, "save_config")) return -1;
 
-	if (checkWifiIsConnected())
+	if (checkWifiIsConnected()) {
 		system("echo idle > /tmp/dhcp_status");
-	else
+		system("echo idle > /tmp/dhcp_status");
+	} else {
 		system("echo fail > /tmp/dhcp_status");
+	}
 
 	return 0;
 err:

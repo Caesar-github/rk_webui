@@ -183,6 +183,13 @@ int ap_state(void) {
   printf("		</div>\n");
   printf("	</div>\n");
 	printf("</div>\n");
+
+	printf("<div class='content_box'>\n");
+	printf("  <div class='content_li'>\n");
+	printf("	<strong><font size='6' face='arial' color='#FF0000'>注意: 当连接目标WiFi和热点不在相同信道时会导致热点断开，请重新在setting界面连接热点，以获取配网状态。</font></strong>\n");
+	printf("  </div>\n");
+	printf("</div>\n");
+
 	printf("</BODY></HTML>\n");
 
 	clearNetworkList(&apList);
