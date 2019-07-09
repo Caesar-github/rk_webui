@@ -19,7 +19,12 @@ case "$1" in
 		sleep 1
 		wpa_supplicant -B -i wlan0 -c /data/cfg/wpa_supplicant.conf
 		sleep 1
-		softapDemo 888
+
+		MAC_ADDR=`ifconfig | grep wlan0 | awk '{print $5}'`
+		MAC1=`echo ${MAC_ADDR:12:2}`
+		MAC2=`echo ${MAC_ADDR:15:2}`
+		softapDemo Rockchip_WebUI_${MAC1}${MAC2}
+
 		sleep 1
 		boa
 
